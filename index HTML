@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Guide Pro - Création de Comptes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+
+        .platform-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .platform-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, var(--brand-color) 0%, #333 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Couleurs des marques */
+        .brand-pocket { --brand-color: #00bfff; border-color: #00bfff; }
+        .brand-tiktok { --brand-color: #000000; border-color: #000000; }
+        .brand-instagram { --brand-color: #E1306C; border-color: #E1306C; }
+        .brand-youtube { --brand-color: #FF0000; border-color: #FF0000; }
+        .brand-facebook { --brand-color: #1877F2; border-color: #1877F2; }
+        .brand-paypal { --brand-color: #003087; border-color: #003087; }
+
+        /* Animation pour le contenu */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- En-tête -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fa-solid fa-globe text-indigo-600 text-3xl"></i>
+                <h1 class="font-bold text-2xl tracking-tight text-slate-800">DigiGuide<span class="text-indigo-600">Pro</span></h1>
+            </div>
+            <div class="hidden sm:block text-right">
+                <p class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Réalisé par</p>
+                <p class="text-sm font-bold text-indigo-600">ADEDZE junior</p>
+            </div>
+            <a href="tel:92630992" class="bg-indigo-50 text-indigo-700 hover:bg-indigo-100 px-4 py-2 rounded-lg text-sm font-bold transition flex items-center space-x-2">
+                <i class="fa-solid fa-phone"></i>
+                <span class="hidden sm:inline">92 63 09 92</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-slate-900 text-white py-20 px-4 text-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#6366f1 1px, transparent 1px); background-size: 20px 20px;"></div>
+        <div class="max-w-3xl mx-auto relative z-10">
+            <span class="bg-indigo-600/30 text-indigo-300 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-6 inline-block">Tutoriels 100% Pratiques</span>
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">Générez des revenus grâce au digital</h2>
+            <p class="text-slate-300 text-lg mb-8">Découvrez étape par étape comment configurer vos comptes pour la monétisation, le trading et la réception de vos paiements internationaux.</p>
+        </div>
+    </section>
+
+    <!-- Grille des plateformes -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 -mt-10 relative z-20">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
+            
+            <!-- Pocket Option -->
+            <div onclick="showGuide('pocket')" class="platform-card bg-white rounded-2xl p-6 shadow-lg border-t-4 brand-pocket text-center flex flex-col items-center">
+                <div class="w-16 h-16 rounded-full bg-blue-50 flex items-center justify-center text-blue-500 mb-4 text-3xl">
+                    <i class="fa-solid fa-arrow-trend-up"></i>
+                </div>
+                <h3 class="font-bold text-lg">Pocket Option</h3>
+                <p class="text-xs text-slate-500 mt-2">Trading & Options</p>
+            </div>
+
+            <!-- TikTok -->
+            <div onclick="showGuide('tiktok')" class="platform-card bg-white rounded-2xl p-6 shadow-lg border-t-4 brand-tiktok text-center flex flex-col items-center">
+                <div class="w-16 h-16 rounded-full bg-slate-100 flex items-center justify-center text-slate-900 mb-4 text-3xl">
+                    <i class="fa-brands fa-tiktok"></i>
+                </div>
+                <h3 class="font-bold text-lg">TikTok</h3>
+                <p class="text-xs text-slate-500 mt-2">Compte Monétisé</p>
+            </div>
+
+            <!-- YouTube -->
+            <div onclick="showGuide('youtube')" class="platform-card bg-white rounded-2xl p-6 shadow-lg border-t-4 brand-youtube text-center flex flex-col items-center">
+                <div class="w-16 h-16 rounded-full bg-red-50 flex items-center justify-center text-red-600 mb-4 text-3xl">
+                    <i class="fa-brands fa-youtube"></i>
+                </div>
+                <h3 class="font-bold text-lg">YouTube</h3>
+                <p class="text-xs text-slate-500 mt-2">Chaîne & AdSense</p>
+            </div>
+
+            <!-- Instagram -->
+            <div onclick="showGuide('instagram')" class="platform-card bg-white rounded-2xl p-6 shadow-lg border-t-4 brand-instagram text-center flex flex-col items-center">
+                <div class="w-16 h-16 rounded-full bg-pink-50 flex items-center justify-center text-pink-600 mb-4 text-3xl">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+                <h3 class="font-bold text-lg">Instagram</h3>
+                <p class="text-xs text-slate-500 mt-2">Compte Créateur</p>
+            </div>
+
+            <!-- Facebook -->
+            <div onclick="showGuide('facebook')" class="platform-card bg-white rounded-2xl p-6 shadow-lg border-t-4 brand-facebook text-center flex flex-col items-center">
+                <div class="w-16 h-16 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 mb-4 text-3xl">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </div>
+                <h3 class="font-bold text-lg">Facebook</h3>
+                <p class="text-xs text-slate-500 mt-2">Page Pro & Pubs</p>
+            </div>
+
+            <!-- PayPal -->
+            <div onclick="showGuide('paypal')" class="platform-card bg-white rounded-2xl p-6 shadow-lg border-t-4 brand-paypal text-center flex flex-col items-center">
+                <div class="w-16 h-16 rounded-full bg-blue-50 flex items-center justify-center text-blue-800 mb-4 text-3xl">
+                    <i class="fa-brands fa-paypal"></i>
+                </div>
+                <h3 class="font-bold text-lg">PayPal</h3>
+                <p class="text-xs text-slate-500 mt-2">Réception de fonds</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Zone d'affichage du guide (Cachée par défaut) -->
+    <section id="guide-container" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 hidden mb-20">
+        <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100">
+            <!-- Header du guide généré dynamiquement -->
+            <div id="guide-header" class="p-8 text-white"></div>
+            <!-- Contenu du guide -->
+            <div id="guide-content" class="p-8"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-auto bg-slate-900 text-slate-400 py-8 text-center text-sm border-t border-slate-800">
+        <p>Développé au Togo par <span class="font-bold text-white">ADEDZE junior</span> | Contact : +228 92 63 09 92</p>
+        <p class="mt-2 text-xs">Ces tutoriels sont fournis à titre indicatif. Respectez toujours les conditions d'utilisation de chaque plateforme.</p>
+    </footer>
+
+    <!-- Logique JavaScript contenant les tutoriels -->
+    <script>
+        const guides = {
+            pocket: {
+                title: "Créer un compte Pocket Option",
+                icon: "fa-arrow-trend-up",
+                color: "#00bfff",
+                intro: "Pocket Option est un courtier en ligne populaire pour le trading d'options binaires.",
+                steps: [
+                    { 
+                        title: "Aller sur le site officiel", 
+                        text: "Rendez-vous sur le site officiel de Pocket Option depuis votre navigateur ou téléchargez l'application.",
+                        image: "https://placehold.co/600x300/00bfff/ffffff?text=Page+d'accueil+Pocket+Option"
+                    },
+                    { 
+                        title: "Inscription", 
+                        text: "Cliquez sur 'Inscription'. Entrez une adresse email valide, créez un mot de passe fort et acceptez les conditions.",
+                        image: "https://placehold.co/600x300/00bfff/ffffff?text=Formulaire+d'inscription"
+                    },
+                    { 
+                        title: "Validation de l'email", 
+                        text: "Allez dans votre boîte de réception email, trouvez le message de Pocket Option et cliquez sur le lien de confirmation.",
+                        image: "https://placehold.co/600x300/00bfff/ffffff?text=Email+de+Confirmation"
+                    },
+                    { 
+                        title: "Vérification d'identité (KYC)", 
+                        text: "Dans les paramètres de votre profil, remplissez vos vraies informations. Vous devrez envoyer une photo de votre pièce d'identité (Carte, Passeport) et un justificatif de domicile pour pouvoir retirer vos gains.",
+                        image: "https://placehold.co/600x300/00bfff/ffffff?text=Verification+Identite+(KYC)"
+                    },
+                    { 
+                        title: "Compte Démo", 
+                        text: "Avant de déposer de l'argent réel, utilisez toujours le compte démo fourni avec 10 000$ virtuels pour vous entraîner aux stratégies.",
+                        image: "https://placehold.co/600x300/00bfff/ffffff?text=Compte+Demo+(10+000$)"
+                    }
+                ],
+                tip: "Attention au trading, cela comporte de hauts risques financiers. Formez-vous avant d'investir de l'argent réel."
+            },
+            tiktok: {
+                title: "Créer un compte TikTok Monétisé (Afrique)",
+                icon: "fa-tiktok",
+                color: "#000000",
+                intro: "Pour accéder au Programme pour la Création (Monétisation des vues) depuis un pays non éligible, des étapes précises sont requises.",
+                steps: [
+                    { 
+                        title: "Préparation (Très important)", 
+                        text: "Désinstallez l'application TikTok. Retirez votre carte SIM locale de votre téléphone, ou utilisez un téléphone sans SIM.",
+                        image: "https://placehold.co/600x300/1e293b/ffffff?text=Retrait+de+la+carte+SIM"
+                    },
+                    { 
+                        title: "Utilisation d'un VPN", 
+                        text: "Installez un VPN (NordVPN, CyberGhost, etc.). Connectez-vous à un pays éligible à la monétisation : France, USA ou Royaume-Uni.",
+                        image: "https://placehold.co/600x300/1e293b/ffffff?text=Connexion+VPN+(France/USA)"
+                    },
+                    { 
+                        title: "Création du compte", 
+                        text: "Allez sur le site web de TikTok (ou réinstallez l'app) TOUJOURS AVEC LE VPN ACTIVÉ. Créez le compte avec une NOUVELLE adresse email (n'utilisez pas de numéro de téléphone).",
+                        image: "https://placehold.co/600x300/1e293b/ffffff?text=Inscription+par+Email"
+                    },
+                    { 
+                        title: "Vérification des options", 
+                        text: "Dans les paramètres 'Outils pour les créateurs', vérifiez que l'option 'Programme de récompenses pour les créateurs' ou 'Version Bêta' apparaît. Si oui, l'astuce a fonctionné.",
+                        image: "https://placehold.co/600x300/1e293b/ffffff?text=Menu:+Outils+pour+Createurs"
+                    },
+                    { 
+                        title: "Conditions de monétisation", 
+                        text: "Pour être payé, vous devrez ensuite atteindre : 10 000 abonnés, 100 000 vues sur les 30 derniers jours, et avoir plus de 18 ans.",
+                        image: "https://placehold.co/600x300/1e293b/ffffff?text=Tableau+de+bord+Monetisation"
+                    }
+                ],
+                tip: "Gardez toujours le VPN activé sur le pays choisi lorsque vous publiez une vidéo pour ne pas perdre la monétisation."
+            },
+            youtube: {
+                title: "Créer une Chaîne YouTube Monétisable",
+                icon: "fa-youtube",
+                color: "#FF0000",
+                intro: "La monétisation YouTube (Google AdSense) est l'une des plus stables pour les créateurs de contenu.",
+                steps: [
+                    { 
+                        title: "Créer un compte Google", 
+                        text: "Si vous n'avez pas de compte Gmail pro, créez-en un dédié à votre chaîne.",
+                        image: "https://placehold.co/600x300/ef4444/ffffff?text=Nouveau+compte+Google"
+                    },
+                    { 
+                        title: "Créer la chaîne", 
+                        text: "Allez sur YouTube, cliquez sur votre profil en haut à droite et choisissez 'Créer une chaîne'. Donnez-lui un nom accrocheur et une belle photo de profil.",
+                        image: "https://placehold.co/600x300/ef4444/ffffff?text=Bouton+Creer+une+chaine"
+                    },
+                    { 
+                        title: "Personnalisation", 
+                        text: "Allez dans 'YouTube Studio'. Ajoutez une bannière, une description avec des mots-clés, et vérifiez votre compte avec un numéro de téléphone pour pouvoir publier des vidéos de plus de 15 minutes.",
+                        image: "https://placehold.co/600x300/ef4444/ffffff?text=YouTube+Studio"
+                    },
+                    { 
+                        title: "Lier un compte AdSense", 
+                        text: "Dans la section 'Revenus' de YouTube Studio, suivez votre progression. Une fois les critères atteints, YouTube vous proposera de créer et lier un compte Google AdSense pour recevoir l'argent.",
+                        image: "https://placehold.co/600x300/ef4444/ffffff?text=Section+Revenus+(AdSense)"
+                    },
+                    { 
+                        title: "Critères de monétisation", 
+                        text: "Atteindre 1 000 abonnés ET soit 4 000 heures de visionnage public valides (vidéos longues), soit 10 millions de vues sur les Shorts en 90 jours.",
+                        image: "https://placehold.co/600x300/ef4444/ffffff?text=Criteres:+1000+abos+/+4000h"
+                    }
+                ],
+                tip: "La régularité est la clé sur YouTube. Publiez des miniatures (thumbnails) de haute qualité pour attirer les clics."
+            },
+            instagram: {
+                title: "Créer un compte Instagram Créateur",
+                icon: "fa-instagram",
+                color: "#E1306C",
+                intro: "Un compte Créateur/Professionnel donne accès aux statistiques et aux partenariats rémunérés.",
+                steps: [
+                    { 
+                        title: "Inscription", 
+                        text: "Téléchargez l'application et inscrivez-vous avec une adresse email professionnelle.",
+                        image: "https://placehold.co/600x300/db2777/ffffff?text=Page+d'inscription+Instagram"
+                    },
+                    { 
+                        title: "Passer en compte Professionnel", 
+                        text: "Allez dans votre Profil > Menu (les 3 lignes) > Paramètres et confidentialité. Cherchez 'Type de compte et outils' et cliquez sur 'Passer à un compte professionnel'.",
+                        image: "https://placehold.co/600x300/db2777/ffffff?text=Parametres+du+compte"
+                    },
+                    { 
+                        title: "Choisir la catégorie", 
+                        text: "Sélectionnez 'Créateur' (idéal pour les influenceurs, artistes) ou 'Entreprise' (pour les boutiques/marques).",
+                        image: "https://placehold.co/600x300/db2777/ffffff?text=Choix+de+la+categorie"
+                    },
+                    { 
+                        title: "Optimiser la bio", 
+                        text: "Rédigez une bio claire expliquant ce que vous faites. Ajoutez un lien vers vos autres réseaux ou votre portfolio via des outils comme Linktree.",
+                        image: "https://placehold.co/600x300/db2777/ffffff?text=Profil+Instagram+Optimise"
+                    },
+                    { 
+                        title: "Monétisation", 
+                        text: "Instagram paie directement (bonus Reels) dans certains pays seulement. Ailleurs, l'argent se gagne via les placements de produits en contactant directement les marques.",
+                        image: "https://placehold.co/600x300/db2777/ffffff?text=Statistiques+et+Monetisation"
+                    }
+                ],
+                tip: "Publiez quotidiennement des 'Reels', c'est actuellement le format qui offre le plus de visibilité gratuite sur la plateforme."
+            },
+            facebook: {
+                title: "Créer une Page Facebook Monétisée",
+                icon: "fa-facebook-f",
+                color: "#1877F2",
+                intro: "Facebook propose la monétisation via les publicités intégrées aux vidéos (In-Stream Ads).",
+                steps: [
+                    { 
+                        title: "Profil personnel", 
+                        text: "Vous devez avoir un compte personnel Facebook valide et ancien (ne créez pas un faux profil, il sera bloqué).",
+                        image: "https://placehold.co/600x300/2563eb/ffffff?text=Profil+Personnel+Facebook"
+                    },
+                    { 
+                        title: "Créer la Page", 
+                        text: "Dans le menu Facebook, allez dans 'Pages' et cliquez sur 'Créer une page'. Remplissez la catégorie et les informations.",
+                        image: "https://placehold.co/600x300/2563eb/ffffff?text=Creation+d'une+Page"
+                    },
+                    { 
+                        title: "Meta Business Suite", 
+                        text: "Connectez-vous à Meta Business Suite sur ordinateur. C'est ici que vous gérerez vos publications, vos statistiques et la monétisation.",
+                        image: "https://placehold.co/600x300/2563eb/ffffff?text=Tableau+Meta+Business+Suite"
+                    },
+                    { 
+                        title: "Critères de monétisation", 
+                        text: "Pour les publicités in-stream : Avoir 5 000 abonnés et générer 60 000 minutes de visionnage sur vos vidéos au cours des 60 derniers jours.",
+                        image: "https://placehold.co/600x300/2563eb/ffffff?text=Criteres:+5k+abos+/+60k+minutes"
+                    },
+                    { 
+                        title: "Configuration des paiements", 
+                        text: "Une fois éligible, Facebook vou
